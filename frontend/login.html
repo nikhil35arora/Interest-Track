@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login | InterestTrack</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="login-body">
+    <div class="login-card">
+        <h2 class="logo">Interest<span>Track</span></h2>
+        <p>Please login to manage your ledger</p>
+        
+        <form id="login-form" onsubmit="handleLogin(event)">
+            <div class="login-group">
+                <label>Username</label>
+                <input type="text" id="username" placeholder="Enter Username" required>
+            </div>
+            <div class="login-group">
+                <label>Password</label>
+                <input type="password" id="password" placeholder="••••••••" required>
+            </div>
+
+            <button type="submit" class="btn-login">Login</button>
+            
+            <div id="login-error" class="error-message" style="display:none; margin-top:10px; color:red; font-size: 14px;">
+                Invalid username or password. Please try again.
+            </div>
+
+            <p style="margin-top: 15px; font-size: 14px; text-align: center;">
+                Forgot password? 
+                <a href="mailto:admin@test.com?subject=InterestTrack%20Support&body=Hi%20Admin,%20I%20need%20help%20accessing%20my%20account." 
+                   style="color: #3498db; text-decoration: none; font-weight: bold;">
+                   Contact Admin
+                </a>
+            </p>
+
+            <div style="margin-top: 25px; padding-top: 15px; border-top: 1px solid #eee; text-align: center;">
+                <p style="font-size: 14px; color: #666;">
+                    Don't have an account? 
+                    <a href="signup.html" style="color: #3498db; font-weight: bold; text-decoration: none;">Sign Up Here</a>
+                </p>
+            </div>
+        </form>
+    </div>
+
+    <script src="auth.js"></script>
+    <script src="login.js"></script>
+</body>
+</html>

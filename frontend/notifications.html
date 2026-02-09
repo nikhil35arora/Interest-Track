@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Reminders | InterestTrack</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <nav class="sidebar">
+            <h2 class="logo">Interest<span>Track</span></h2>
+            <ul>
+                <li onclick="location.href='index.html'">Dashboard</li>
+                <li onclick="location.href='history.html'">Transactions</li>
+                <li onclick="location.href='contacts.html'">Contacts</li>
+                <li onclick="location.href='reports.html'">Reports</li>
+                <li class="active" onclick="location.href='notifications.html'">Reminders</li>
+                <li onclick="location.href='settings.html'">Settings</li>
+                <li onclick="logoutUser()" style="margin-top:auto; color:#e74c3c; cursor:pointer;">Logout</li>
+            </ul>
+        </nav>
+
+       <main class="main-content">
+            <header>
+                <h1>Payment Reminders</h1>
+                <p>Stay on top of your collections and interest due dates.</p>
+            </header>
+
+            <div class="reminder-summary">
+                <div class="alert-card">
+                    <h3 id="due-count">0</h3>
+                    <p>Payments Due This Week</p>
+                </div>
+            </div>
+
+            <section class="reminder-list">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Name</th>
+                            <th>Amount</th>
+                            <th>Interest Due</th>
+                            <th>Last Date</th>
+                            <th>Status</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+                    <tbody id="reminder-body">
+                        </tbody>
+                </table>
+            </section>
+        </main>
+    </div>
+    <script src="reminders.js"></script>
+</body>
+</html>

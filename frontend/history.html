@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ledger History | InterestTrack</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <nav class="sidebar">
+            <h2 class="logo">Interest<span>Track</span></h2>
+            <ul>
+                <li onclick="location.href='index.html'">Dashboard</li>
+                <li class="active" onclick="location.href='history.html'">Transactions</li>
+                <li onclick="location.href='contacts.html'">Contacts</li>
+                <li onclick="location.href='reports.html'">Reports</li>
+                <li onclick="location.href='notifications.html'">Reminders</li>
+                <li onclick="location.href='settings.html'">Settings</li>
+                <li onclick="logoutUser()" style="margin-top: auto; color: #e74c3c; cursor: pointer;">Logout</li>
+            </ul>
+        </nav>
+
+        <main class="main-content">
+            <header class="history-header">
+                <div>
+                    <h1>Transaction History</h1>
+                    <p>Track all given and taken amounts stored in your account.</p>
+                </div>
+                <div class="search-container">
+                    <input type="text" id="search-bar" placeholder="Search by name..." onkeyup="filterTable()">
+                </div>
+            </header>
+
+            <section class="table-container">
+                <table id="transaction-table">
+                    <thead>
+                        <tr>
+                            <th>Date</th>
+                            <th>Contact Name</th>
+                            <th>Type</th>
+                            <th>Principal (₹)</th>
+                            <th>Interest Rate</th>
+                            <th>Monthly Interest</th>
+                            <th>Status</th>
+                        </tr>
+                    </thead>
+                    <tbody id="table-body">
+                        <tr><td colspan="7" style="text-align:center;">Connecting to database...</td></tr>
+                    </tbody>
+                </table>
+            </section>
+        </main>
+    </div>
+
+    <script src="utils.js"></script>
+    <script src="auth.js"></script>
+    <script src="history.js"></script>
+</body>
+</html>

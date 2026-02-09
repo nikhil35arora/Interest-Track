@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contacts | InterestTrack</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <nav class="sidebar">
+            <h2 class="logo">Interest<span>Track</span></h2>
+            <ul>
+               <li onclick="location.href='index.html'">Dashboard</li>
+              <li onclick="location.href='history.html'">Transactions</li>
+              <li class="active" onclick="location.href='contacts.html'">Contacts</li>
+               <li onclick="location.href='reports.html'">Reports</li>
+               <li onclick="location.href='notifications.html'">Reminders</li>
+               <li id="nav-sett" onclick="location.href='settings.html'">Settings</li>
+                <li onclick="logoutUser()" style="margin-top: auto; color: #e74c3c; cursor: pointer;">Logout</li>
+            </ul>
+        </nav>
+
+        <main class="main-content">
+            <header class="history-header">
+                <div>
+                    <h1>Contact Directory</h1>
+                    <p>Summary of total outstanding balances per person.</p>
+                </div>
+            </header>
+
+            <section class="table-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Contact Name</th>
+                            <th>Total Lent (₹)</th>
+                            <th>Total Taken (₹)</th>
+                            <th>Net Balance (₹)</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+                    <tbody id="contacts-table-body">
+                        <tr><td colspan="5" style="text-align:center;">Loading contacts...</td></tr>
+                    </tbody>
+                </table>
+            </section>
+        </main>
+    </div>
+    <script src="contacts.js"></script>
+    <script src="utils.js"></script>
+    <script src="auth.js"></script>
+</body>
+</html>

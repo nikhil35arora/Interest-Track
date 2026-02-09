@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>InterestTrack | Ledger Dashboard</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+   
+</ul>
+    <div class="container">
+        <nav class="sidebar">
+            <h2 class="logo">Interest<span>Track</span></h2>
+           <ul>
+             <li class="active" onclick="location.href='index.html'">Dashboard</li>
+              <li onclick="location.href='history.html'">Transactions</li>
+              <li onclick="location.href='contacts.html'">Contacts</li>
+               <li onclick="location.href='reports.html'">Reports</li>
+               <li onclick="location.href='notifications.html'">Reminders</li>
+               <li id="nav-sett" onclick="location.href='settings.html'">Settings</li>
+                <li onclick="logoutUser()" style="margin-top: auto; color: #e74c3c; cursor: pointer;">Logout</li>
+            </ul>
+
+        </nav>
+
+        <main class="main-content">
+            <header>
+                <h1>Transaction Overview</h1>
+                <p id="current-date"></p>
+            </header>
+
+            <section class="form-container">
+                <form id="interest-form">
+                    <div class="input-group">
+                        <label>Contact Name</label>
+                        <input type="text" id="contact-name" placeholder="e.g. John Doe" required>
+                    </div>
+                    <div class="input-group">
+                        <label>Amount (₹)</label>
+                        <input type="number" id="principal" placeholder="Principal Amount" required>
+                    </div>
+                    <div class="input-group">
+                        <label>Annual Interest Rate (%)</label>
+                        <input type="number" id="rate" step="0.01" placeholder="e.g. 12" required>
+                    </div>
+                    <div class="input-group">
+                        <label>Type</label>
+                        <select id="type">
+                            <option value="given"> lent(Given)</option>
+                            <option value="taken">Taken(Received)</option>
+                        </select>
+                    </div>
+                    <button type="submit" class="btn-save">Save & Calculate</button>
+                </form>
+            </section>
+
+            <section class="dashboard-cards">
+               <div class="result-container">
+                 <div class="result-card">
+                     <h3>Total Interest</h3>
+                     <p id="total-interest">₹0.00</p>
+                    </div>
+                 <div class="result-card">
+                     <h3>Total Payable</h3>
+                     <p id="total-payable">₹0.00</p>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+ <script src="utils.js"></script>
+ <script src="auth.js"></script>
+ <script src="script.js"></script>
+
+</body>
+</html>
