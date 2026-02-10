@@ -20,6 +20,9 @@ loginForm.addEventListener('submit', async (event) => {
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({ username, password })
         });
+        if (response.status === 502) {
+            throw new Error("Server is restarting or busy. Please wait a moment.");
+        }
 
         const data = await response.json();
 
