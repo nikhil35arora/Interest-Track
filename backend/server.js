@@ -97,7 +97,7 @@ app.delete('/api/transactions/:userId', async (req, res) => {
         await Transaction.deleteMany({ userId: req.params.userId }); 
         res.status(200).send({ message: "Your data has been cleared." });
     } catch (err) {
-        res.status(500).send({ error: "Could not delete data" });
+        res.status(500).send({ error: "unable to delete data" });
     }
 });
 
