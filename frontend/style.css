@@ -531,4 +531,48 @@ td {
     padding: 10px 20px;
     border-radius: 5px;
     cursor: pointer;
+}/* --- ADD THIS TO THE VERY END OF YOUR STYLE.CSS --- */
+
+/* Tablet and Smaller Desktop View */
+@media (max-width: 992px) {
+    body, .container {
+        flex-direction: column; /* Stacks sidebar above content */
+    }
+    
+    .sidebar {
+        width: 100%;
+        padding: 10px;
+    }
+    
+    .sidebar ul {
+        display: flex;
+        overflow-x: auto; /* Horizontal menu for touch devices */
+        gap: 10px;
+    }
+    
+    .sidebar li {
+        margin-bottom: 0;
+        white-space: nowrap;
+    }
+}
+
+/* Mobile Phone View (iOS and Android) */
+@media (max-width: 600px) {
+    .main-content {
+        padding: 20px;
+    }
+    
+    .dashboard-cards {
+        flex-direction: column; /* Stacks Lent/Taken cards vertically */
+    }
+    
+    #search-bar {
+        width: 100% !important; /* Expands search to full width */
+    }
+
+    /* Prevents auto-zooming on iPhone input fields */
+    .input-group input, 
+    .input-group select {
+        font-size: 16px; 
+    }
 }
