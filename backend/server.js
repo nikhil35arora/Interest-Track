@@ -17,8 +17,8 @@ const path = require('path');
 app.use(express.static(path.join(__dirname, '../frontend')));
 
 // If someone goes to the main URL, show the index.html file
-app.get('*', (req, res) => {
-    res.sendFile(path.join(__dirname, '../frontend', 'index.html'));
+app.get('/:path*', (req, res) => {
+  res.sendFile(path.join(__dirname, '../frontend', 'index.html'));
 });
 app.use(express.json());
 require('dotenv').config(); 
