@@ -1,4 +1,6 @@
-
+const API_URL = window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1'
+    ? 'http://localhost:8000' 
+    : 'https://interest-track.onrender.com';
 // 1. Redirect if not logged in
 const userId = localStorage.getItem('loggedUserId');
 if (!userId) {
