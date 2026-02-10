@@ -11,6 +11,15 @@ app.use(cors({
     methods: ['GET', 'POST', 'PUT', 'DELETE'],
     allowedHeaders: ['Content-Type', 'Authorization']
 }));
+const path = require('path');
+
+// Tell Node to serve the files in your "frontend" folder
+app.use(express.static(path.join(__dirname, '../frontend')));
+
+// If someone goes to the main URL, show the index.html file
+app.get('*', (req, res) => {
+    res.sendFile(path.join(__dirname, '../frontend', 'index.html'));
+});
 app.use(express.json());
 require('dotenv').config(); 
 // --- 2. DATABASE CONNECTION ---
@@ -103,6 +112,7 @@ app.delete('/api/transactions/:userId', async (req, res) => {
 
 // --- 5. START SERVER ---
 const PORT = process.env.PORT || 8000;
+
 app.listen(PORT, () => {
-    console.log(`🚀 Server is running on http://localhost:${PORT}`);
+    console.log(`Server is running on port ${PORT}`);
 });
