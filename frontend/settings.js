@@ -1,3 +1,6 @@
+const API_URL = window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1'
+    ? 'http://localhost:8000' 
+    : 'https://interest-track.onrender.com';
 const userId = localStorage.getItem('loggedUserId');
 if (!userId) {
     window.location.href = 'login.html';
@@ -16,7 +19,7 @@ async function clearDatabase() {
     
     if (confirmation) {
         try {
-            const response = await fetch('http://127.0.0.1:8000/api/transactions', {
+            const response = await fetch(`${API_URL}/api/transactions/${userId}`,{
                 method: 'DELETE', // This must match the app.delete in server.js
                 headers: {
                     'Content-Type': 'application/json'

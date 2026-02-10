@@ -1,3 +1,6 @@
+const API_URL = window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1'
+    ? 'http://localhost:8000' 
+    : 'https://interest-track.onrender.com';
 const userId = localStorage.getItem('loggedUserId');
 if (!userId) {
     window.location.href = 'login.html';
@@ -18,7 +21,7 @@ function formatCurrency(amount) {
 async function generateReport() {
     try {
         const userId = localStorage.getItem('loggedUserId');
-        const response = await fetch(`http://127.0.0.1:8000/api/transactions/${userId}`);
+        const response = await fetch(`${API_URL}/api/transactions/${userId}`);
         const transactions = await response.json();
 
         // 1. Start totals at 0

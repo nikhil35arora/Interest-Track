@@ -1,3 +1,4 @@
+
 // 1. Redirect if not logged in
 const userId = localStorage.getItem('loggedUserId');
 if (!userId) {
@@ -26,7 +27,7 @@ document.getElementById('interest-form').addEventListener('submit', async functi
     };
 
     try {
-        const response = await fetch('http://127.0.0.1:8000/api/transactions', {
+        const response = await fetch(`${API_URL}/api/transactions/${userId}`, {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify(transactionData)
