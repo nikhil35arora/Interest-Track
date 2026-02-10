@@ -12,7 +12,7 @@ app.use(cors({
     allowedHeaders: ['Content-Type', 'Authorization']
 }));
 app.use(express.json());
-
+require('dotenv').config(); 
 // --- 2. DATABASE CONNECTION ---
 const dbURI = process.env.MONGODB_URI;
 mongoose.connect(dbURI)
@@ -92,10 +92,10 @@ app.get('/api/transactions/:userId', async (req, res) => {
 });
 
 // Delete all transactions
-app.delete('/api/transactions', async (req, res) => {
+app.delete('/api/transactions/:userId', async (req, res) => {
     try {
-        await Transaction.deleteMany({}); 
-        res.status(200).send({ message: "Data deleted" });
+        await Transaction.deleteMany({ userId: req.params.userId }); 
+        res.status(200).send({ message: "Your data has been cleared." });
     } catch (err) {
         res.status(500).send({ error: "Could not delete data" });
     }
