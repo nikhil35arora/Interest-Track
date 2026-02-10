@@ -6,10 +6,12 @@ require('dotenv').config();
 const app = express();
 
 // --- 1. MIDDLEWARE (Must be at the top) ---
+const cors = require('cors');
+
 app.use(cors({
-    origin: '*', 
+    origin: ['https://interest-track.onrender.com', 'http://localhost:8000', 'http://127.0.0.1:8000'],
     methods: ['GET', 'POST', 'PUT', 'DELETE'],
-    allowedHeaders: ['Content-Type', 'Authorization']
+    credentials: true
 }));
 const path = require('path');
 
