@@ -81,7 +81,7 @@ app.post('/api/login', async (req, res) => {
 });
 
 // Save Transaction
-app.post('/api/transactions', async (req, res) => {
+app.post('/api/transactions/:userId', async (req, res) => {
     try {
         const newTransaction = new Transaction(req.body);
         await newTransaction.save();
